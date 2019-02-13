@@ -1,10 +1,11 @@
 package bbd.studentroll;
 
-import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import bbd.studentroll.Course;
@@ -20,16 +21,16 @@ public class StudentTest {
 	Student s4 = null;
 	Course c   = null;
 	
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
-		s1 = new Student("Werner", 12, "19930723");
+		s1 = new Student("Werner", 12, "1993-07-23T14:09");
 		s2 = new Student("Nelmari", 11, "19931809");
 		s3 = new Student("melta", 12, "19951002");
 		s4 = new Student("Matt", 13, "19231212");
 		c  = new Course("Java", 2);
 	}
-	
+
 	@Test
 	public void testStudent() {
 		
@@ -73,7 +74,7 @@ public class StudentTest {
 		
 	}
 	
-	@After
+	@AfterEach
 	public void teardown()
 	{
 		s1 = null;

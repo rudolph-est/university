@@ -13,7 +13,7 @@ public class Course
 	{
 		this.name = name;
 		this.capacity = cap;
-		this.students = new ArrayList<Student>();
+		this.students = new ArrayList<>();
 	}
 
 	public String getName() {
@@ -52,13 +52,7 @@ public class Course
 	{
 		if(this.students.size() < this.capacity)
 		{
-			if (this.students.add(s))
-			{
-				return true;
-			}else
-			{
-				return false;
-			}
+			return this.students.add(s);
 		}else
 		{
 			return false;
@@ -67,13 +61,7 @@ public class Course
 	
 	public boolean unenrollStudent(Student s) 
 	{
-		if(this.students.remove(s))
-		{
-			return true;
-		}else
-		{
-			return false;
-		}
+		return this.students.remove(s);
 	}
 	
 }
